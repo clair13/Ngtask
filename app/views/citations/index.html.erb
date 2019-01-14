@@ -1,7 +1,11 @@
 
 <h1>Listing Citations</h1>
-<%= link_to 'New Citation', new_citation_path %>
-<table>
+
+<div class='btn btn-primary'>
+  <%= link_to '<button type="button">New Citation</button>'.html_safe, new_citation_path %>
+</div>
+
+<table class="table table-striped">
   <tr>
     <th>Description</th>
     <th>Said/Written by</th>
