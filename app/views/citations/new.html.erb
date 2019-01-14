@@ -1,1 +1,9 @@
 <h1>New citations</h1>
+
+<div>
+  <%= simple_form_for @citation do |f| %>
+    <%= f.input :description %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+<div>
