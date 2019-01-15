@@ -2,5 +2,7 @@ Rails.application.routes.draw do
   
   root 'citations#index'
 
-  resources :citations
+  resources :citations do
+    resources :comments
+  end
 end

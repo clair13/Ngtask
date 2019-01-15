@@ -1,5 +1,6 @@
 class CitationsController < ApplicationController
-  before_action :set_citation, only: [:show, :update, :edit, :destroy]
+  skip_before_action :verify_authenticity_token
+  before_action :set_citation, only: [:show, :edit, :update, :destroy]
 
 
   def index
