@@ -10,7 +10,18 @@
   </p>
 
   <h2>Comments</h2>
-  <% render @citation.comments %>
+  <% @citation.comments.each do |comment| %>
+    <p>
+      <strong>Comment</strong>
+      <%= comment.body %>
+    </p>
+
+    <p>
+      <%= link_to 'Destroy Comment', [comment.citation, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+     </p>
+  <% end %>
 
   <h2>Add a comment:</h2>
   <%= form_with(model: [ @citation, @citation.comments.build ], local: true) do |f| %>
