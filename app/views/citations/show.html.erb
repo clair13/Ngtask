@@ -1,27 +1,34 @@
 <div class="container">
-  <p>
-    <strong>Description:</strong>
-    <%= @citation.description %>
-  </p>
- 
-  <p>
-    <strong>Said/Written by:</strong>
-    <%= @citation.name %>
-  </p>
-
-  <h2>Comments</h2>
-  <% @citation.comments.each do |comment| %>
+  <div class="container">
     <p>
-      <strong>Comment</strong>
-      <%= comment.body %>
+      <strong>Description:</strong>
+      <%= @citation.description %>
+    </p>
+ 
+    <p>
+      <strong>Said/Written by:</strong>
+      <%= @citation.name %>
     </p>
 
-    <p>
-      <%= link_to 'Destroy Comment', [comment.citation, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-     </p>
-  <% end %>
+    <h2>Comments</h2>
+    <% @citation.comments.each do |comment| %>
+      <div class="row">
+        <div class="col-md-9"
+          <p>
+            <strong>Comment</strong>
+            <%= comment.body %>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p>
+            <%= link_to 'Delete', [comment.citation, comment],
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   <h2>Add a comment:</h2>
   <%= form_with(model: [ @citation, @citation.comments.build ], local: true) do |f| %>
