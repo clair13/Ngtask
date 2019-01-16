@@ -26,6 +26,7 @@ gem 'bootstrap-sass', '~> 3.4'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

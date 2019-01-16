@@ -1,10 +1,9 @@
 class CitationsController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :set_citation, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @citations = Citation.all
+    @citations = Citation.all.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
